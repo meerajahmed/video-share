@@ -1,0 +1,23 @@
+{
+  "name": "video-share",
+  "version": "1.0.0",
+  "description": "video share microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meerajahmed/video-share.git"
+  },
+  "keywords": [
+    "video",
+    "share",
+    "microservices"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meerajahmed/video-share/issues"
+  },
+  "homepage": "https://github.com/meerajahmed/video-share#readme"
+}
