@@ -5,21 +5,39 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('SERVICE_A') private readonly clientServiceA: ClientProxy,
+    @Inject('AUTH_SERVICE') private readonly clientAuthService: ClientProxy,
   ) {}
 
   getHello(): string {
     return 'Hello World!';
   }
 
-  pingServiceA() {
+  pingAuthService() {
     const startTs = Date.now();
-    const pattern = { cmd: 'ping' };
+    const pattern = 'ping';
     const payload = {};
-    return this.clientServiceA.send<string>(pattern, payload).pipe(
+    return this.clientAuthService.send<string>(pattern, payload).pipe(
       map((message: string) => ({
         message,
         duration: `${Date.now() - startTs}ms`,
+      })),
+    );
+  }
+
+  createUser(payload: any) {
+    const pattern = 'createUser';
+    return this.clientAuthService.send<string>(pattern, payload).pipe(
+      map((message: string) => ({
+        message,
+      })),
+    );
+  }
+
+  loginUser(payload: any) {
+    const pattern = 'loginUser';
+    return this.clientAuthService.send<string>(pattern, payload).pipe(
+      map((message: string) => ({
+        message,
       })),
     );
   }

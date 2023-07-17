@@ -7,11 +7,11 @@ import { AppService } from './app.service';
   imports: [
     ClientsModule.register([
       {
-        name: 'SERVICE_A',
+        name: 'AUTH_SERVICE',
         transport: Transport.TCP,
         options: {
           host: '127.0.0.1',
-          port: 8888,
+          port: 8000,
         },
       },
     ]),

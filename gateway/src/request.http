@@ -1,3 +1,27 @@
 
-### Ping service A
-curl 'http://localhost:3000/ping-a' 
+### Ping auth service
+GET /auth/ping HTTP/1.1
+Host: localhost:3000
+
+
+### Create user
+POST /auth/sign-up HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "name": "John",
+    "email": "john@test.com",
+    "password": "mypassword"
+}
+
+### Sign in
+POST /auth/sign-in HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Content-Length: 62
+
+{
+    "email": "john@test.com",
+    "password": "mypassword"
+}
